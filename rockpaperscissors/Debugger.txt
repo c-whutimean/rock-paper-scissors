@@ -1,0 +1,38 @@
+ void gameResult() {
+        if (userMove.equals(compMove)) {
+            System.out.printf("There is a draw (%s)\n", userMove);
+        }
+        else if (compMove.equals(userDefeat)) {
+            /*System.out.println("compMove= " + compMove);
+            System.out.println("userMove= " + userMove);
+            System.out.println("userDefeatMove= " + userDefeat);*/
+            System.out.printf("Sorry, but the computer chose %s\n", compMove);
+        }
+        else {
+           /* System.out.println("compMove= " + compMove);
+            System.out.println("userMove= " + userMove);*/
+            System.out.printf("Well done. The computer chose %s and failed\n", compMove);
+        }
+    }
+
+    public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            Random r = new Random();
+            String userPlay = sc.nextLine().toUpperCase();
+            int upper = 3;
+            int lower = 1;
+            int compPlay = r.nextInt(upper - lower + 1) + lower;
+            //System.out.println("comp play = " + compPlay);
+            Moves userMove = Moves.valueOf(userPlay);
+            Game game = new Game(compPlay, userMove);
+            game.gameResult();
+        }
+
+        else if (!original) {
+                        createWinLose(userPlay);
+                        String[] winning = win.toArray(new String[win.size()]);
+                        String[] losing = lose.toArray(new String[lose.size()]);
+                        System.out.println("Wins against");
+                        System.out.println(Arrays.toString(winning));
+                        System.out.println("Lose against");
+                        System.out.println(Arrays.toString(losing));
